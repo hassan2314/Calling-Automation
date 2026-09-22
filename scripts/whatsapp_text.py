@@ -59,7 +59,7 @@ def main():
         for i, contact in enumerate(contacts, 1):
             number = contact.number
             name = contact.name or number
-            print(f"[{i}/{len(CONTACTS)}] Messaging {name} ({number})...")
+            print(f"[{i}/{len(contacts)}] Messaging {name} ({number})...")
             text = MESSAGE.format(name=name)
             url = f"whatsapp://send?phone={number}&text={quote(text, safe='')}"
             adb("am", "start", "-a", "android.intent.action.VIEW",
